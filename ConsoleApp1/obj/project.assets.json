@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project 1\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Project 1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Project 1\\ConsoleApp1\\BasicSheet.csproj",
+      "projectName": "BasicSheet",
+      "projectPath": "C:\\Project 1\\ConsoleApp1\\BasicSheet.csproj",
       "packagesPath": "C:\\Users\\Ali_Morshed\\.nuget\\packages\\",
       "outputPath": "C:\\Project 1\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
