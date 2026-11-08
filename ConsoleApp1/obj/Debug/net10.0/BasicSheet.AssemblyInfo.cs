@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BasicSheet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ebf2e5ba7e1a4647ba192a646d6618750ab12c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b80dbdef2887cc933506d121029cd1a944b7870")]
 [assembly: System.Reflection.AssemblyProductAttribute("BasicSheet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BasicSheet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

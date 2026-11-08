@@ -1,0 +1,15 @@
+C:\Project 1\DataTypesSheet\bin\Debug\net10.0\DataTypesSheet.exe
+C:\Project 1\DataTypesSheet\bin\Debug\net10.0\DataTypesSheet.deps.json
+C:\Project 1\DataTypesSheet\bin\Debug\net10.0\DataTypesSheet.runtimeconfig.json
+C:\Project 1\DataTypesSheet\bin\Debug\net10.0\DataTypesSheet.dll
+C:\Project 1\DataTypesSheet\bin\Debug\net10.0\DataTypesSheet.pdb
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.AssemblyInfoInputs.cache
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.AssemblyInfo.cs
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.csproj.CoreCompileInputs.cache
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.sourcelink.json
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.dll
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\refint\DataTypesSheet.dll
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.pdb
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\DataTypesSheet.genruntimeconfig.cache
+C:\Project 1\DataTypesSheet\obj\Debug\net10.0\ref\DataTypesSheet.dll

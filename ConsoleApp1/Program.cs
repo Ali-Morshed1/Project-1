@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.Configuration.Assemblies;
 using System.Drawing;
 using System.Numerics;
@@ -15,7 +16,7 @@ class Program
         // Print_Hello_and_Name(); // 1
         // Sum_of_Two_Numbers(); // 2
         // Divide_Two_Numbers(); //3
-        // placeholder(); // ???
+        // Specified_Operations_Results(); // 4
         // Swap_Two_Numbers(); // 5
         // Multiply_Three_Numbers(); // 6
         // Arithmetic_Operations();  // 7
@@ -72,7 +73,50 @@ class Program
         // Complete_Missing_Numbers_in_Range(); // 58
         // Check_Strictly_Increasing_Sequence(); // 59
         // Sum_of_Matrix_with_Zero_Condition(); // 60
-
+        // Sort_Integers_Keeping_Minus5_Fixed(); // 61
+        // Reverse_Strings_in_Parentheses(); // 62
+        // Check_Number_in_Array(); // 63
+        // Get_File_Name_from_Path(); // 64
+        // Multiply_Array_Elements_by_Length(); // 65
+        // Min_Value_from_Two_String_Numbers(); // 66
+        // Coded_String_Conversion(); // 67
+        // Count_Specific_Character_in_String(); // 68
+        // Check_All_Uppercase_or_Lowercase(); // 69
+        // Remove_First_and_Last_Characters(); // 70
+        // Check_Consecutive_Similar_Letters(); // 71
+        // Check_Array_Average_as_Whole_Number(); // 72
+        // Alphabetical_Order_of_String_Letters(); // 73
+        // Odd_or_Even_Length_of_String(); // 74
+        // Nth_Odd_Number(); // 75
+        // Get_ASCII_Value_of_Character(); // 76
+        // Check_Word_Plural(); // 77
+        // Sum_of_Squares_in_Array(); // 78
+        // Integer_to_String_and_Vice_Versa(); // 79
+        // Convert_Array_Elements_to_Strings(); // 80
+        // Check_Swapped_Two_Digit_Number(); // 81
+        // Remove_Non_Letter_Characters(); // 82
+        // Remove_Vowels_from_String(); // 83
+        // Indices_of_Lowercase_Letters(); // 84
+        // Cumulative_Sum_of_Array(); // 85
+        // Count_Letters_and_Digits_in_String(); // 86
+        // Reverse_Boolean_Value(); // 87
+        // Sum_of_Interior_Angles_in_Polygon(); // 88
+        // Count_Positives_and_Negatives_in_Array(); // 89
+        // Count_Ones_and_Zeros_in_Binary(); // 90
+        // Remove_Non_Integer_Values_from_Array(); // 91
+        // Find_Next_Prime_Number(); // 92
+        // Square_Root_Without_Built_In_Functions(); // 93
+        // Find_Longest_Common_Prefix(); // 94
+        // Validate_Brackets_in_String(); // 95
+        // Check_All_Characters_Same_in_String(); // 96
+        // static void Check_Numeric_String(); // 97
+        // Primes_in_Descending_Order(); // 98
+        // Primes_in_Ascending_Order(); // 99
+        // Equality_of_Value_and_Type(); // 100
+        // Calculate_Eulers_Number(); // 101
+        // Create_Identity_Matrix(); // 102
+        // Sort_Characters_in_String(); // 103
+        // Compare_Equality_of_Three_Integers(); // 104
     }
     // Question 1
     static void Print_Hello_and_Name()
@@ -132,6 +176,19 @@ class Program
                 System.Console.WriteLine("Please Enter A Valid Number");
             }
         }
+    }
+    // Question 4? (this is the last Question I did I left it for last)
+    static void Specified_Operations_Results()
+    {
+        int result1 = -1 + 4 * 6;
+        int result2 = (35 + 5) % 7;
+        int result3 = 14 + -4 * 6 / 11;
+        int result4 = 2 + 15 / 6 * 1 - 7 % 2;
+
+        System.Console.WriteLine($"Result 1: {result1}");
+        System.Console.WriteLine($"Result 2: {result2}");
+        System.Console.WriteLine($"Result 3: {result3}");
+        System.Console.WriteLine($"Result 4: {result4}");
     }
     // Question 5
     static void Swap_Two_Numbers()
@@ -1256,7 +1313,7 @@ class Program
         else
             System.Console.WriteLine("False");
     }
-    // Question 50 FINALLYYYYYYYYY
+    // Question 50 
     static void Rotate_Array_Left()
     {
         int[] ints = new int[3];
@@ -1331,7 +1388,7 @@ class Program
         else
             System.Console.WriteLine($"Both Are Equal! {ints[0]} = {ints[ints.Length - 1]}");
     }
-    // Question 52
+    // Question 52 Half Way There ...
     static void Middle_Elements_of_Three_Arrays()
     {
         int[] int0 = { 1, 2, 3 };
@@ -1729,7 +1786,1384 @@ class Program
 
         System.Console.WriteLine($"Total Sum: {totalSum}");
     }
+    // Question 61
+    static void Sort_Integers_Keeping_Minus5_Fixed()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
 
+        int[] ints = new int[length];
+
+        for (int i = 0; i < ints.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]");
+                    ints[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+        for (int i = 0; i < ints.Length - 1; i++)
+        {
+            if (ints[i] == -5) continue;
+
+            for (int j = i + 1; j < ints.Length; j++)
+            {
+                if (ints[j] == -5) continue;
+
+                if (ints[i] > ints[j])
+                {
+                    int temp = ints[i];
+                    ints[i] = ints[j];
+                    ints[j] = temp;
+                }
+            }
+        }
+
+        System.Console.WriteLine("Sorted Array:");
+        for (int i = 0; i < ints.Length; i++)
+        {
+            System.Console.WriteLine($"index [{i}]: {ints[i]}");
+        }
+    }
+    // Question 62
+    static void Reverse_Strings_in_Parentheses()
+    {
+        string? normalText;
+        do
+        {
+            System.Console.WriteLine("Enter A Random Sentence with () to flip it:");
+            normalText = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(normalText));
+        while (normalText.Contains("(") && normalText.Contains(")"))
+        {
+            int openIndex = normalText.LastIndexOf('(');
+            int closeIndex = normalText.IndexOf(')', openIndex);
+            string insideText = normalText.Substring(openIndex + 1, closeIndex - openIndex - 1);
+            char[] chars = insideText.ToCharArray();
+            Array.Reverse(chars);
+            string reversedText = new string(chars);
+            normalText = normalText.Substring(0, openIndex) + reversedText + normalText.Substring(closeIndex + 1);
+        }
+        System.Console.WriteLine($"Result: {normalText}");
+    }
+    // Question 63
+    static void Check_Number_in_Array()
+    {
+        int[] array = { 1, 2, 3, 4, 5, 6 };
+        int? given = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter A Number Inside The Array { 1, 2, 3, 4, 5, 6 } ");
+                given = Convert.ToInt32(Console.ReadLine());
+                bool isgiven = false;
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] == given)
+                        isgiven = true;
+                }
+                if (isgiven)
+                    System.Console.WriteLine("true");
+                else
+                    System.Console.WriteLine("false");
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+    }
+    // Question 64
+    static void Get_File_Name_from_Path()
+    {
+        string? path;
+        while (true)
+        {
+            System.Console.Write("Please Enter A File Path: ");
+            path = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(path) && File.Exists(path))
+            {
+                string fileName = Path.GetFileName(path);
+                System.Console.WriteLine($"File Name: {fileName}");
+                break;
+            }
+            else
+            {
+                System.Console.WriteLine("File Not Found!");
+            }
+        }
+    }
+    // Question 65
+    static void Multiply_Array_Elements_by_Length()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[] ints = new int[length];
+
+        for (int i = 0; i < ints.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]");
+                    ints[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+        for (int i = 0; i < length; i++)
+            ints[i] = ints[i] * length;
+        for (int i = 0; i < length; i++)
+            System.Console.WriteLine($"Index[{i}] = {ints[i]}");
+    }
+    // Question 66
+    static void Min_Value_from_Two_String_Numbers()
+    {
+        string? num1;
+        string? num2;
+        int num11 = 0;
+        int num22 = 0;
+        do
+        {
+            System.Console.WriteLine("Enter First Number");
+            num1 = Console.ReadLine();
+            System.Console.WriteLine("Enter Second Number");
+            num2 = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(num1) && string.IsNullOrWhiteSpace(num2));
+        num11 = Convert.ToInt32(num1);
+        num22 = Convert.ToInt32(num2);
+        if (num11 > num22)
+            System.Console.WriteLine($"Minimum Value:{num22}");
+        else
+            System.Console.WriteLine($"Minimum Value:{num11}");
+    }
+    // Question 67
+    static void Coded_String_Conversion()
+    {
+        string? path;
+        do
+        {
+            System.Console.WriteLine("Enter The Code");
+            path = Console.ReadLine().ToLower();
+        } while (string.IsNullOrWhiteSpace(path));
+        string result = path.Replace("p", "7")
+        .Replace("t", "0")
+        .Replace("s", "5")
+        .Replace("h", "5")
+        .Replace("a", "4");
+        System.Console.WriteLine(result);
+    }
+    // Question 68
+    static void Count_Specific_Character_in_String()
+    {
+        string? text;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            text = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(text));
+
+        char targetChar;
+        while (true)
+        {
+            System.Console.WriteLine("Enter character to count:");
+            string? inputChar = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(inputChar) && inputChar.Length == 1)
+            {
+                targetChar = inputChar[0];
+                break;
+            }
+            System.Console.WriteLine("Please enter a single character.");
+        }
+
+        int count = 0;
+        string lowerText = text.ToLower();
+        char lowerChar = char.ToLower(targetChar);
+
+        for (int i = 0; i < lowerText.Length; i++)
+        {
+            if (lowerText[i] == lowerChar)
+            {
+                count++;
+            }
+        }
+
+        System.Console.WriteLine($"The character '{targetChar}' appears {count} times.");
+    }
+    // Question 69
+    static void Check_All_Uppercase_or_Lowercase()
+    {
+        string? normal;
+        do
+        {
+            System.Console.WriteLine("Enter A Sentence in Lowercase or Uppercase");
+            normal = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(normal));
+        if (normal == normal.ToUpper())
+            System.Console.WriteLine("true it's all Uppercases");
+        else if (normal == normal.ToLower())
+            System.Console.WriteLine("true it's all Lowercases");
+        else
+            System.Console.WriteLine("false they are not lowercases/uppercases");
+    }
+    // Question 70
+    static void Remove_First_and_Last_Characters()
+    {
+        string? name;
+        do
+        {
+            System.Console.WriteLine("Enter A Random String:");
+            name = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(name) || name.Length < 2)
+            {
+                System.Console.WriteLine("Please enter a string with at least 2 characters.");
+            }
+        } while (string.IsNullOrWhiteSpace(name) || name.Length < 2);
+        name = name.Remove(0, 1);
+        name = name.Remove(name.Length - 1, 1);
+        System.Console.WriteLine($"Result: {name}");
+    }
+    // Question 71
+    static void Check_Consecutive_Similar_Letters()
+    {
+        string? text;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            text = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(text));
+
+        bool hasConsecutive = false;
+
+        for (int i = 0; i < text.Length - 1; i++)
+        {
+            if (char.ToLower(text[i]) == char.ToLower(text[i + 1]))
+            {
+                hasConsecutive = true;
+                break;
+            }
+        }
+
+        System.Console.WriteLine($"Contains consecutive identical letters: {hasConsecutive}");
+    }
+    // Question 72
+    static void Check_Array_Average_as_Whole_Number()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[] ints = new int[length];
+
+        for (int i = 0; i < ints.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]");
+                    ints[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+        double total = 0;
+        for (int i = 0; i < length; i++)
+            total += ints[i];
+        System.Console.WriteLine($"The Sum Of The Array:{total}");
+        System.Console.WriteLine($"The Average Of The Array:{total / length}");
+        if (total / length % 2 == 0)
+            System.Console.WriteLine("Is Average a Whole Number: True");
+        else
+            System.Console.WriteLine("Is Average a Whole Number: False");
+    }
+    // Question 73
+    static void Alphabetical_Order_of_String_Letters()
+    {
+        string? text;
+        do
+        {
+            System.Console.WriteLine("Enter a string to sort alphabetically:");
+            text = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(text))
+                System.Console.WriteLine("Please enter a valid string.");
+        } while (string.IsNullOrWhiteSpace(text));
+        char[] chars = text.ToCharArray();
+        Array.Sort(chars);
+        string sortedText = new string(chars);
+        System.Console.WriteLine($"Sorted String: {sortedText}");
+    }
+    // Question 74
+    static void Odd_or_Even_Length_of_String()
+    {
+        string? e;
+        do
+        {
+            System.Console.WriteLine("Enter A String To See If It Has An Odd/Even Amount of Letters");
+            e = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(e));
+        if (e.Length % 2 == 0)
+            System.Console.WriteLine("It's Even!");
+        else
+            System.Console.WriteLine("It's Odd!");
+    }
+    // Question 75
+    static void Nth_Odd_Number()
+    {
+        int odd = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.Write("Num:");
+                odd = Convert.ToInt32(Console.ReadLine());
+
+                if (odd <= 0)
+                {
+                    System.Console.WriteLine("Please enter a number greater than 0");
+                    continue;
+                }
+                int count = 0;
+                int currentOdd = 0;
+                for (int i = 1; count < odd; i++)
+                {
+                    if (i % 2 != 0)
+                    {
+                        currentOdd = i;
+                        count++;
+                    }
+                }
+
+                System.Console.WriteLine($"The {odd} th odd number is {currentOdd}");
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("please Enter A Valid Number");
+            }
+        }
+    }
+    // Question 76
+    static void Get_ASCII_Value_of_Character()
+    {
+        char character;
+        while (true)
+        {
+            System.Console.Write("Enter a single character: ");
+            string? input = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(input) && input.Length == 1)
+            {
+                character = input[0];
+                break;
+            }
+            else
+                System.Console.WriteLine("Please enter exactly one character.");
+        }
+        int asciiValue = Convert.ToInt32(character);
+        System.Console.WriteLine($"ASCII value of '{character}' is: {asciiValue}");
+    }
+    // Question 77
+    static void Check_Word_Plural()
+    {
+        string? Send_Help;
+        while (true)
+        {
+            System.Console.WriteLine("Enter A Word Thats Plural");
+            Send_Help = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(Send_Help) && Send_Help[Send_Help.Length - 1] == 's' || !string.IsNullOrWhiteSpace(Send_Help) && Send_Help[Send_Help.Length - 1] == 'S')
+            {
+                System.Console.WriteLine($"Is '{Send_Help}' plural: True");
+                break;
+            }
+            else if (!string.IsNullOrWhiteSpace(Send_Help) && Send_Help[Send_Help.Length - 1] != 's' || !string.IsNullOrWhiteSpace(Send_Help) && Send_Help[Send_Help.Length - 1] != 'S')
+            {
+                System.Console.WriteLine($"Is '{Send_Help}' plural: False");
+                break;
+            }
+            else
+                System.Console.WriteLine("Please Enter A Valid Word");
+        }
+    }
+    // Question 78
+    static void Sum_of_Squares_in_Array()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[] ints = new int[length];
+
+        for (int i = 0; i < ints.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]");
+                    ints[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+        double total = 0;
+        for (int i = 0; i < ints.Length; i++)
+            total += Math.Pow(ints[i], 2);
+        System.Console.WriteLine($"Sum of Squares: {total}");
+    }
+    // Question 79
+    static void Integer_to_String_and_Vice_Versa()
+    {
+        string? IDK;
+        int? convertedInt = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter a number as a string:");
+                IDK = Console.ReadLine();
+                convertedInt = Convert.ToInt32(IDK);
+                System.Console.WriteLine("\n--- String to Integer Conversion ---");
+                System.Console.WriteLine($"Converted Value: {convertedInt}");
+                System.Console.WriteLine($"Data Type: {convertedInt.GetType()}");
+
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+    }
+    // Question 80
+    static void Convert_Array_Elements_to_Strings()
+    {
+        object[] randoms = { 1, true, "Test", 'L', 1.2 };
+        string[] STRINGS = new string[randoms.Length];
+        for (int i = 0; i < randoms.Length; i++)
+            STRINGS[i] += Convert.ToString(randoms[i]);
+        foreach (string z in STRINGS)
+            System.Console.Write($"{z} ");
+        System.Console.WriteLine();
+        System.Console.WriteLine(STRINGS.GetType());
+    }
+    // Question 81
+    static void Check_Swapped_Two_Digit_Number()
+    {
+        string? IDK;
+        string swapped;
+        int? convertedInt = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter a two-digit number (10-99):");
+                IDK = Console.ReadLine();
+                convertedInt = Convert.ToInt32(IDK);
+                if (convertedInt >= 100 || convertedInt <= 9)
+                    System.Console.WriteLine("Please Enter A Two Digit Number");
+                else if (convertedInt < 100 && convertedInt > 9)
+                {
+                    char[] chars = IDK.ToCharArray();
+                    Array.Reverse(chars);
+                    swapped = new string(chars);
+                    convertedInt = Convert.ToInt32(swapped);
+                    System.Console.WriteLine($"Original:{IDK}");
+                    System.Console.WriteLine($"Swapped:{swapped}");
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+    }
+    // Question 82
+    static void Remove_Non_Letter_Characters()
+    {
+        string? man;
+        string cleaned = "";
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            man = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(man));
+        for (int i = 0; i < man.Length; i++)
+            if (char.IsLetter(man[i]))
+                cleaned += man[i];
+        System.Console.WriteLine($"Before:{man}");
+        System.Console.WriteLine($"After :{cleaned}");
+    }
+    // Question 83
+    static void Remove_Vowels_from_String()
+    {
+        string? Vowels;
+        string bad_words = "aeiouAEIOU";
+        string cleaned = "";
+        do
+        {
+            System.Console.WriteLine("Enter A String:");
+            Vowels = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(Vowels));
+        for (int i = 0; i < Vowels.Length; i++)
+            if (!bad_words.Contains(Vowels[i]))
+                cleaned += Vowels[i];
+        System.Console.WriteLine($"No Vowels:{cleaned}");
+    }
+    // Question 84
+    static void Indices_of_Lowercase_Letters()
+    {
+        string? Perchance;
+        do
+        {
+            System.Console.WriteLine("Enter A String And I will Tell You What Index Has Lowercases In it");
+            Perchance = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(Perchance));
+        List<int> index = new List<int>();
+        for (int i = 0; i < Perchance.Length; i++)
+            if (char.IsLower(Perchance[i]))
+                index.Add(i);
+        foreach (int idx in index)
+            System.Console.Write($"{idx} ");
+        System.Console.WriteLine();
+    }
+    // Question 85
+    static void Cumulative_Sum_of_Array()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array:");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[] numbers = new int[length];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]:");
+                    numbers[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+
+        int[] cumulative = new int[length];
+        int runningSum = 0;
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            runningSum += numbers[i];
+            cumulative[i] = runningSum;
+        }
+
+        System.Console.WriteLine($"Original Array: [{string.Join(", ", numbers)}]");
+        System.Console.WriteLine($"Cumulative Sum Array: [{string.Join(", ", cumulative)}]");
+    }
+    // Question 86
+    static void Count_Letters_and_Digits_in_String()
+    {
+        string? input;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            input = Console.ReadLine();
+        } while (string.IsNullOrWhiteSpace(input));
+        int letterCount = 0;
+        int digitCount = 0;
+        foreach (char c in input)
+        {
+            if (char.IsLetter(c))
+                letterCount++;
+            else if (char.IsDigit(c))
+                digitCount++;
+        }
+        System.Console.WriteLine($"Letters count: {letterCount}");
+        System.Console.WriteLine($"Digits count: {digitCount}");
+    }
+    // Question 87
+    static void Reverse_Boolean_Value()
+    {
+        string? input;
+        bool perchance = false;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter True/False");
+                input = Console.ReadLine().ToLower();
+                if (input != "true" && input != "false")
+                    System.Console.WriteLine("Please Enter 'True' or 'False'");
+                else if (input == "true" || input == "false")
+                {
+                    if (input == "true")
+                        perchance = false;
+                    else if (input == "false")
+                        perchance = true;
+                    System.Console.WriteLine($"Before Reverse:{input}");
+                    System.Console.WriteLine($"After  Reverse:{perchance}");
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Invalid Input");
+            }
+        }
+    }
+    // Question 88
+    static void Sum_of_Interior_Angles_in_Polygon()
+    {
+        int? sides;
+        int? sum = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the number of sides (minimum 3):");
+                sides = Convert.ToInt32(Console.ReadLine());
+                if (sides < 3)
+                    System.Console.WriteLine("Please Enter A Number Bigger Than 3");
+                else
+                {
+                    sum = (sides - 2) * 180;
+                    System.Console.WriteLine($"Sides:{sides}");
+                    System.Console.WriteLine($"Sum of interior angles: {sum} degrees");
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+    }
+    // Question 89
+    static void Count_Positives_and_Negatives_in_Array()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the array");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[] ints = new int[length];
+
+        for (int i = 0; i < ints.Length; i++)
+        {
+            while (true)
+            {
+                try
+                {
+                    System.Console.WriteLine($"Enter element for index [{i}]");
+                    ints[i] = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Please Enter A Valid Number");
+                }
+            }
+        }
+        int Odd = 0;
+        int Even = 0;
+        for (int i = 0; i < ints.Length; i++)
+        {
+            if (ints[i] % 2 == 0)
+                Even++;
+            else if (ints[i] % 2 != 0)
+                Odd++;
+        }
+        System.Console.WriteLine($"This Array Contains:{Even} Even Numbers");
+        System.Console.WriteLine($"This Array Contains:{Odd} Odd Numbers");
+    }
+    // Question 90
+    static void Count_Ones_and_Zeros_in_Binary()
+    {
+        int number = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter an integer:");
+                number = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        string binaryStr = Convert.ToString(number, 2);
+        int onesCount = 0;
+        int zerosCount = 0;
+
+        foreach (char c in binaryStr)
+        {
+            if (c == '1')
+            {
+                onesCount++;
+            }
+            else if (c == '0')
+            {
+                zerosCount++;
+            }
+        }
+
+        System.Console.WriteLine($"Binary Representation: {binaryStr}");
+        System.Console.WriteLine($"Ones count: {onesCount}");
+        System.Console.WriteLine($"Zeros count: {zerosCount}");
+    }
+    // Question 91
+    static void Remove_Non_Integer_Values_from_Array()
+    {
+        object[] mixedArray = { 10, "Hello", true, 25, 3.14, 'A', 42 };
+        int count = 0;
+        foreach (object item in mixedArray)
+            if (item is int)
+                count++;
+        int[] resultArray = new int[count];
+        int index = 0;
+        foreach (object item in mixedArray)
+            if (item is int value)
+            {
+                resultArray[index] = value;
+                index++;
+            }
+        System.Console.Write("Filtered Integers: ");
+        foreach (int num in resultArray)
+            System.Console.Write($"{num} ");
+        System.Console.WriteLine();
+    }
+    // Question 92
+    static void Find_Next_Prime_Number()
+    {
+        int number = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter an integer:");
+                number = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+        int candidate = number;
+        while (true)
+        {
+            bool isPrime = true;
+            if (candidate < 2)
+                isPrime = false;
+            else
+                for (int i = 2; i * i <= candidate; i++)
+                    if (candidate % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+
+            if (isPrime)
+            {
+                System.Console.WriteLine($"The smallest prime >= {number} is: {candidate}");
+                break;
+            }
+
+            candidate++;
+        }
+    }
+    // Question 93
+    static void Square_Root_Without_Built_In_Functions()
+    {
+        int number = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter a non-negative integer:");
+                number = Convert.ToInt32(Console.ReadLine());
+                if (number >= 0)
+                    break;
+                System.Console.WriteLine("Please enter a number greater than or equal to 0.");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int result = 0;
+        while ((result + 1) * (result + 1) <= number)
+            result++;
+        System.Console.WriteLine($"Integer Square Root of {number} is: {result}");
+    }
+    // Question 94
+    static void Find_Longest_Common_Prefix()
+    {
+        int length = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the number of strings:");
+                length = Convert.ToInt32(Console.ReadLine());
+                if (length > 0)
+                    break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        string[] words = new string[length];
+        for (int i = 0; i < words.Length; i++)
+            do
+            {
+                System.Console.WriteLine($"Enter string at index [{i}]:");
+                words[i] = Console.ReadLine()!;
+                if (string.IsNullOrWhiteSpace(words[i]))
+                    System.Console.WriteLine("Please enter a valid string.");
+            } while (string.IsNullOrWhiteSpace(words[i]));
+
+        string prefix = words[0];
+
+        for (int i = 1; i < words.Length; i++)
+            while (!words[i].StartsWith(prefix))
+            {
+                prefix = prefix.Substring(0, prefix.Length - 1);
+                if (string.IsNullOrEmpty(prefix))
+                    break;
+            }
+
+        if (string.IsNullOrEmpty(prefix))
+            System.Console.WriteLine("Longest Common Prefix: \"\" (No common prefix)");
+        else
+            System.Console.WriteLine($"Longest Common Prefix: \"{prefix}\"");
+    }
+    // Question 95
+    static void Validate_Brackets_in_String()
+    {
+        string? input;
+        do
+        {
+            System.Console.WriteLine("Enter a string containing brackets:");
+            input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                System.Console.WriteLine("Please enter a valid string.");
+            }
+        } while (string.IsNullOrWhiteSpace(input));
+
+        Stack<char> stack = new Stack<char>();
+        bool isValid = true;
+
+        foreach (char c in input)
+        {
+            if (c == '(' || c == '{' || c == '[')
+            {
+                stack.Push(c);
+            }
+            else if (c == ')' || c == '}' || c == ']')
+            {
+                if (stack.Count == 0)
+                {
+                    isValid = false;
+                    break;
+                }
+
+                char top = stack.Pop();
+                if ((c == ')' && top != '(') ||
+                    (c == '}' && top != '{') ||
+                    (c == ']' && top != '['))
+                {
+                    isValid = false;
+                    break;
+                }
+            }
+        }
+
+        if (stack.Count > 0)
+        {
+            isValid = false;
+        }
+
+        if (isValid)
+        {
+            System.Console.WriteLine("The brackets are valid and properly nested.");
+        }
+        else
+        {
+            System.Console.WriteLine("The brackets are invalid or improperly nested.");
+        }
+    }
+    // Question 96
+    static void Check_All_Characters_Same_in_String()
+    {
+        string? input;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                System.Console.WriteLine("Please enter a valid string.");
+            }
+        } while (string.IsNullOrWhiteSpace(input));
+
+        char firstChar = input[0];
+        bool allSame = true;
+
+        for (int i = 1; i < input.Length; i++)
+        {
+            if (input[i] != firstChar)
+            {
+                allSame = false;
+                break;
+            }
+        }
+
+        System.Console.WriteLine($"All characters are identical: {allSame}");
+    }
+    // Question 97
+    static void Check_Numeric_String()
+    {
+        string? input;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+                System.Console.WriteLine("Please enter a valid string.");
+        } while (string.IsNullOrWhiteSpace(input));
+
+        bool isNumeric = true;
+        try
+        {
+            Convert.ToDouble(input);
+        }
+        catch (Exception)
+        {
+            isNumeric = false;
+        }
+
+        System.Console.WriteLine($"Is numeric string: {isNumeric}");
+    }
+    // Question 98
+    static void Primes_in_Descending_Order()
+    {
+        int limit = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter maximum limit:");
+                limit = Convert.ToInt32(Console.ReadLine());
+                if (limit >= 2) break;
+                System.Console.WriteLine("Please enter a number >= 2");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        System.Console.WriteLine($"Primes with strictly descending digits up to {limit}:");
+
+        for (int candidate = 2; candidate <= limit; candidate++)
+        {
+
+            bool isPrime = true;
+            for (int i = 2; i * i <= candidate; i++)
+            {
+                if (candidate % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (!isPrime) continue;
+
+            string s = candidate.ToString();
+            bool isDescending = true;
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                if (s[i] <= s[i + 1])
+                {
+                    isDescending = false;
+                    break;
+                }
+            }
+
+            if (isDescending)
+            {
+                System.Console.Write($"{candidate} ");
+            }
+        }
+        System.Console.WriteLine();
+    }
+    // Question 99
+    static void Primes_in_Ascending_Order()
+    {
+        int limit = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter maximum limit:");
+                limit = Convert.ToInt32(Console.ReadLine());
+                if (limit >= 2) break;
+                System.Console.WriteLine("Please enter a number >= 2");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        System.Console.WriteLine($"Primes with strictly ascending digits up to {limit}:");
+
+        for (int candidate = 2; candidate <= limit; candidate++)
+        {
+
+            bool isPrime = true;
+            for (int i = 2; i * i <= candidate; i++)
+            {
+                if (candidate % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (!isPrime) continue;
+
+
+            string s = candidate.ToString();
+            bool isAscending = true;
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                if (s[i] >= s[i + 1])
+                {
+                    isAscending = false;
+                    break;
+                }
+            }
+
+            if (isAscending)
+            {
+                System.Console.Write($"{candidate} ");
+            }
+        }
+        System.Console.WriteLine();
+    }
+    // QUESTION 100!!!!! This Was A Long Journey & A Tiring One ...
+    static void Equality_of_Value_and_Type()
+    {
+        object first = 5;
+        object second = 5.0;
+
+        bool typeMatch = first.GetType() == second.GetType();
+        bool valueMatch = first.ToString() == second.ToString();
+        bool result = typeMatch && valueMatch;
+
+        System.Console.WriteLine($"First Value: {first} (Type: {first.GetType()})");
+        System.Console.WriteLine($"Second Value: {second} (Type: {second.GetType()})");
+        System.Console.WriteLine($"Result: {result}");
+    }
+    // Question 101 e (ه)
+    static void Calculate_Eulers_Number()
+    {
+        int terms = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter number of terms for approximation:");
+                terms = Convert.ToInt32(Console.ReadLine());
+                if (terms > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        double e = 1.0;
+        double factorial = 1.0;
+
+        for (int i = 1; i < terms; i++)
+        {
+            factorial *= i;
+            e += 1.0 / factorial;
+        }
+
+        System.Console.WriteLine($"Approximation of e: {e}");
+    }
+    // Question 102
+    static void Create_Identity_Matrix()
+    {
+        int size = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter the size of the identity matrix:");
+                size = Convert.ToInt32(Console.ReadLine());
+                if (size > 0) break;
+                System.Console.WriteLine("Please enter a number greater than 0");
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int[,] matrix = new int[size, size];
+
+        for (int r = 0; r < size; r++)
+        {
+            for (int c = 0; c < size; c++)
+            {
+                if (r == c)
+                {
+                    matrix[r, c] = 1;
+                }
+                else
+                {
+                    matrix[r, c] = 0;
+                }
+            }
+        }
+
+        for (int r = 0; r < size; r++)
+        {
+            for (int c = 0; c < size; c++)
+            {
+                System.Console.Write($"{matrix[r, c]} ");
+            }
+            System.Console.WriteLine();
+        }
+    }
+    // Question 103
+    static void Sort_Characters_in_String()
+    {
+        string? input;
+        do
+        {
+            System.Console.WriteLine("Enter a string:");
+            input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                System.Console.WriteLine("Please enter a valid string.");
+            }
+        } while (string.IsNullOrWhiteSpace(input));
+
+        List<char> lower = new List<char>();
+        List<char> upper = new List<char>();
+        List<char> digits = new List<char>();
+
+        foreach (char c in input)
+        {
+            if (char.IsLower(c))
+            {
+                lower.Add(c);
+            }
+            else if (char.IsUpper(c))
+            {
+                upper.Add(c);
+            }
+            else if (char.IsDigit(c))
+            {
+                digits.Add(c);
+            }
+        }
+
+        char[] lowerArr = lower.ToArray();
+        char[] upperArr = upper.ToArray();
+        char[] digitsArr = digits.ToArray();
+
+        Array.Sort(lowerArr);
+        Array.Sort(upperArr);
+        Array.Sort(digitsArr);
+
+        string result = new string(lowerArr) + new string(upperArr) + new string(digitsArr);
+
+        System.Console.WriteLine($"Original: {input}");
+        System.Console.WriteLine($"Sorted: {result}");
+    }
+    // Question 104 it was so peak ...
+    static void Compare_Equality_of_Three_Integers()
+    {
+        int num1 = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter first integer:");
+                num1 = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int num2 = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter second integer:");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int num3 = 0;
+        while (true)
+        {
+            try
+            {
+                System.Console.WriteLine("Enter third integer:");
+                num3 = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Please Enter A Valid Number");
+            }
+        }
+
+        int matchCount = 0;
+
+        if (num1 == num2 && num2 == num3)
+        {
+            matchCount = 3;
+        }
+        else if (num1 == num2 || num2 == num3 || num1 == num3)
+        {
+            matchCount = 2;
+        }
+        else
+        {
+            matchCount = 0;
+        }
+
+        System.Console.WriteLine($"Matching integers count: {matchCount}");
+    }
 }
-
-
